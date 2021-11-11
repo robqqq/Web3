@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: RoBQ
+  Date: 03.11.2021
+  Time: 22:14
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title><ui:insert name="title"/></title>
+    <ui:insert name="stylesheet"/>
+</h:head>
+
+<h:body>
+    <div class="container">
+
+        <ui:insert name="scripts"/>
+
+        <div class="header">
+            <ui:insert name="header">
+                <ui:include src="header.xhtml"/>
+            </ui:insert>
+        </div>
+        <div class="wrapper">
+            <div class="content">
+                <ui:insert name="content"/>
+            </div>
+        </div>
+        <div class="link">
+            <ui:insert name="link"/>
+        </div>
+
+        <div class="results">
+            <ui:insert name="results"/>
+        </div>
+
+    </div>
+</h:body>
+
+</html>

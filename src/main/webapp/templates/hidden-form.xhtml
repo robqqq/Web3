@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: RoBQ
+  Date: 10.11.2021
+  Time: 21:47
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Hidden form</title>
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <h:form id="hidden-form" style="display: none">
+            <h:inputText styleClass="hidden-x" value="#{results.getPlotPoint().x}">
+                <f:validator validatorId="xValidator"/>
+            </h:inputText>
+            <h:inputText styleClass="hidden-y" value="#{results.getPlotPoint().y}">
+                <f:validator validatorId="yValidator"/>
+            </h:inputText>
+            <h:inputText styleClass="hidden-r" value="#{results.getPlotPoint().r}">
+                <f:validator validatorId="rValidator"/>
+            </h:inputText>
+            <h:commandButton styleClass="hidden-button" action="#{results.addPlotPoint()}" validateClient="true">
+                <f:ajax execute="@form" render="result-table msgs"/>
+            </h:commandButton>
+        </h:form>
+    </ui:composition>
+</h:body>
+
+</html>
